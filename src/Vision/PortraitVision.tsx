@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 
-const LandscapeVisionDiv = styled.div`
+const PortraitVisionDiv = styled.div`
 	height: 100vh;
 	width: 100vw;
 	@media (max-width: 880px) {
@@ -79,9 +79,9 @@ const NftAnchor = styled.a`
 	z-index: 10000;
 `;
 
-function LandscapeVision() {
+function PortraitVision() {
 	return (
-		<LandscapeVisionDiv>
+		<PortraitVisionDiv>
 			<TransformWrapper
 				initialScale={1}
 				minScale={1}
@@ -124,8 +124,11 @@ function LandscapeVision() {
 								height: '100%',
 								margin: '0 auto',
 							}}
+							contentStyle={{
+								height: '100vh',
+							}}
 						>
-							<div style={{ position: 'relative' }}>
+							<div style={{ position: 'relative', height: '100%' }}>
 								<NftAnchor
 									href="https://opensea.io/collection/arboreum"
 									target="_blank"
@@ -133,7 +136,7 @@ function LandscapeVision() {
 									nft
 								</NftAnchor>
 								<img
-									width="100%"
+									height="100%"
 									src="assets/vision-port.png"
 									alt="vision of arboreum"
 								/>
@@ -142,8 +145,8 @@ function LandscapeVision() {
 					</>
 				)}
 			</TransformWrapper>
-		</LandscapeVisionDiv>
+		</PortraitVisionDiv>
 	);
 }
 
-export default LandscapeVision;
+export default PortraitVision;
