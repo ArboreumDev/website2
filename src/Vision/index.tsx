@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Loader from '../Loader';
 import LandscapeVision from './LandscapeVision';
 import PortraitVision from './PortraitVision';
 
@@ -6,6 +7,7 @@ function Vision() {
 	const [orientation, setOrientation] = useState<
 		'portrait' | 'landscape' | null
 	>(null);
+	const [isLoading, setLoading] = useState(true);
 	useEffect(() => {
 		const changeOrientationHandler = () => {
 			let vh = window.innerHeight * 0.01;
@@ -17,13 +19,18 @@ function Vision() {
 		};
 		// for initial setup
 		changeOrientationHandler();
+		const loadingTimeout = setTimeout(() => {
+			setLoading(false);
+		}, 3000);
 		window.addEventListener('resize', changeOrientationHandler);
 		return () => {
 			window.removeEventListener('resize', changeOrientationHandler);
+			clearTimeout(loadingTimeout);
 		};
 	});
 	return (
 		<>
+			<Loader isLoading={isLoading} />
 			{orientation === 'landscape' ? <LandscapeVision /> : <PortraitVision />}
 		</>
 	);
