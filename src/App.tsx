@@ -1,4 +1,5 @@
 import Vision from './Vision';
+
 function App() {
 	return (
 		<>
