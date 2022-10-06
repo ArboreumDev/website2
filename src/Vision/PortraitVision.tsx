@@ -85,7 +85,6 @@ function LandscapeVision() {
 			<TransformWrapper
 				initialScale={1}
 				minScale={1}
-				centerOnInit={true}
 				alignmentAnimation={{
 					disabled: true,
 					sizeX: 0,
