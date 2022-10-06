@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import LandscapeVision from './LandscapeVision';
-import Header from '../Header';
 import PortraitVision from './PortraitVision';
 
 function Vision() {
@@ -16,6 +15,8 @@ function Vision() {
 			if (vh > vw) setOrientation('portrait');
 			else setOrientation('landscape');
 		};
+		// for initial setup
+		changeOrientationHandler();
 		window.addEventListener('resize', changeOrientationHandler);
 		return () => {
 			window.removeEventListener('resize', changeOrientationHandler);
@@ -23,7 +24,6 @@ function Vision() {
 	});
 	return (
 		<>
-			<Header />
 			{orientation === 'landscape' ? <LandscapeVision /> : <PortraitVision />}
 		</>
 	);

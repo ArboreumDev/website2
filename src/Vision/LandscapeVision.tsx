@@ -12,6 +12,24 @@ const LandscapeVisionDiv = styled.div`
 	background: #042d51;
 `;
 
+const HeaderElement = styled.div`
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 60px;
+	z-index: 900;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	color: #fff;
+	box-sizing: border-box;
+
+	img {
+		height: 100%;
+	}
+`;
+
 const TransformTools = styled.div`
 	position: fixed;
 
@@ -76,6 +94,13 @@ function LandscapeVision() {
 			>
 				{({ zoomIn, zoomOut, resetTransform, ...rest }) => (
 					<>
+						<HeaderElement>
+							<img
+								src="./assets/arboreumLogoLight.png"
+								alt="arboreum logo light"
+							/>
+							<a href="https://test-arboreum.netlify.app">Back to Home</a>
+						</HeaderElement>
 						<TransformTools>
 							<button onClick={() => zoomIn()}>
 								<img src="./assets/icons/zoom-in.png" alt="zoom in logo" />
