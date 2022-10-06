@@ -28,6 +28,7 @@ const LoaderScreen = styled.div`
 		height: 20%;
 	}
 
+	h2,
 	h3 {
 		font-weight: 600;
 	}
@@ -41,6 +42,7 @@ const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
 	return isLoading ? (
 		<LoaderScreen>
 			<LandscapeRotate className="loading-img" />
+			<h2>Loading...</h2>
 			<h3>Please keep your device in landscape mode...!!</h3>
 			<p>This page is best viewed in landscape orientation</p>
 		</LoaderScreen>
