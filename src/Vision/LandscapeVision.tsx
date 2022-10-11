@@ -67,7 +67,7 @@ const NftAnchor = styled.a`
 	display: block;
 	position: absolute;
 	height: 22%;
-	top: 14%;
+	top: 17%;
 	left: 72%;
 	z-index: 10000;
 	animation: 0.8s pulse ease infinite alternate;
