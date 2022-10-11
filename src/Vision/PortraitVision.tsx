@@ -70,13 +70,24 @@ const TransformTools = styled.div`
 const NftAnchor = styled.a`
 	display: block;
 	position: absolute;
-	height: 9%;
-	width: 22%;
-	top: 71%;
+	height: 8%;
+	top: 72%;
 	left: 63%;
-	background-color: red;
-	opacity: 0;
 	z-index: 10000;
+	animation: 0.8s pulse ease infinite alternate;
+
+	img {
+		height: 100%;
+	}
+
+	@keyframes pulse {
+		from {
+			transform: scale(0.9);
+		}
+		to {
+			transform: scale(1);
+		}
+	}
 `;
 
 function PortraitVision() {
@@ -133,11 +144,11 @@ function PortraitVision() {
 									href="https://opensea.io/collection/arboreum"
 									target="_blank"
 								>
-									nft
+									<img src="/assets/squirrel-port.png" alt="squirrel nft" />
 								</NftAnchor>
 								<img
 									height="100%"
-									src="assets/vision-port.png"
+									src="assets/vision-port-new.png"
 									alt="vision of arboreum"
 								/>
 							</div>
