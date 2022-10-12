@@ -74,18 +74,43 @@ const NftAnchor = styled.a`
 	top: 72%;
 	left: 61%;
 	z-index: 10000;
-	animation: 0.8s pulse ease infinite alternate;
 
 	img {
 		height: 100%;
 	}
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: -2px;
+		right: 0;
+		border-radius: 50%;
+		background-color: transparent;
+		z-index: -1;
+		height: 10px;
+		width: 10px;
+	}
 
-	@keyframes pulse {
-		from {
-			transform: scale(0.9);
-		}
-		to {
+	&::after {
+		animation: shockwave 1s 0.65s ease-out infinite;
+	}
+
+	&::before {
+		animation: shockwave 1s 0s ease-out infinite;
+	}
+
+	@keyframes shockwave {
+		0% {
 			transform: scale(1);
+			box-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+				inset 0 0 10px rgba(255, 255, 255, 0.5);
+		}
+		95% {
+			box-shadow: 0 0 50px rgba(255, 255, 255, 0),
+				inset 0 0 30px rgba(255, 255, 255, 0);
+		}
+		100% {
+			transform: scale(5.25);
 		}
 	}
 `;
@@ -96,6 +121,7 @@ function PortraitVision() {
 			<TransformWrapper
 				initialScale={1}
 				minScale={1}
+				initialPositionX={-100}
 				alignmentAnimation={{
 					disabled: true,
 					sizeX: 0,
