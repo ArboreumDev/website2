@@ -72,7 +72,7 @@ const NftAnchor = styled.a`
 	position: absolute;
 	height: 8%;
 	top: 72%;
-	left: 61%;
+	left: 62%;
 	z-index: 10000;
 
 	img {
@@ -121,7 +121,6 @@ function PortraitVision() {
 			<TransformWrapper
 				initialScale={1}
 				minScale={1}
-				initialPositionX={-100}
 				alignmentAnimation={{
 					disabled: true,
 					sizeX: 0,
